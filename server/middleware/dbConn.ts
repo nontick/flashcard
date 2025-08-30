@@ -35,7 +35,8 @@ export default defineEventHandler(async () => {
 
   try {
     await connectOnce();
-  } catch {
+  } catch (e) {
+    console.log(e);
     throw createError({
       statusCode: 503,
       statusMessage: "Service Unavailable",
